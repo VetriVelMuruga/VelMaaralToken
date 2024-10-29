@@ -1,0 +1,77 @@
+/* Styling with glossy green look */
+body {
+    background-image: url('https://wallpapercave.com/w/wp10037188');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background: linear-gradient(145deg, #4caf50, #3e8e41);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3), inset 0px 0px 15px rgba(255, 255, 255, 0.4);
+    border: 2px solid #2a8a2a;
+    color: #fff;
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff5722; /* Changed button color */
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+/* Hidden by default, shown on admin login */
+#adminDashboard {
+    display: none;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    color: white;
+}
+
+.login-container {
+    display: none;
+}
