@@ -9,29 +9,34 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- User Form -->
-    <div class="container" id="userForm">
-        <h2>Token Generator</h2>
-        <div class="form-group">
-            <label for="phoneNumber">Enter Mobile Number:</label>
-            <!-- Limit mobile number to 16 characters -->
-            <input type="tel" id="phoneNumber" placeholder="Mobile Number" maxlength="16">
+    <div class="page-container">
+        <!-- Sidebar for the VelMurugaaa image -->
+        <div class="sidebar">
+            <img src="VelMurugaaa.jpg" alt="VelMurugaaa Image" class="VelMurugaaa-image">
         </div>
-        <div class="form-group">
-            <label for="numberOfPersons">Enter No. of Persons:</label>
-            <!-- Adjust dropdown width to match phoneNumber input -->
-            <select id="numberOfPersons" style="width:100%;">
-                <option value="">Select number of persons</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
+
+        <!-- Main content area for the form -->
+        <div class="container" id="userForm">
+            <h2>Token Generator</h2>
+            <div class="form-group">
+                <label for="phoneNumber">Enter Mobile Number:</label>
+                <input type="tel" id="phoneNumber" placeholder="Mobile Number" maxlength="16">
+            </div>
+            <div class="form-group">
+                <label for="numberOfPersons">Enter No. of Persons:</label>
+                <select id="numberOfPersons">
+                    <option value="">Select number of persons</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <button onclick="generateToken()">Submit</button>
+            <button onclick="showAdminLogin()">Admin Login</button>
         </div>
-        <button onclick="generateToken()">Submit</button>
-        <button onclick="showAdminLogin()">Admin Login</button>
     </div>
 
     <!-- Admin Login Modal -->
@@ -53,7 +58,6 @@
         <h2>Admin Dashboard</h2>
         <p id="tokenReport"></p>
         <button onclick="generatePDFReport()">Download Report</button>
-        <!-- Reset button with password prompt for admin to clear data -->
         <button onclick="resetData()">Reset Data</button>
     </div>
 </body>
