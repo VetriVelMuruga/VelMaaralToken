@@ -1,13 +1,10 @@
-// Constants and State
 let currentToken = 1;
 const MAX_TOKENS = 3000;
 const MAX_PERSONS_PER_PHONE = 6;
 let phoneTokenCount = {};
 const adminUsername = "Muruga";
 const adminPassword = "Velmaral";
-const resetPassword = "Tiruvanamalai"; // Password for resetting data
 
-// Generates tokens and validates input
 function generateToken() {
     const phoneNumber = document.getElementById('phoneNumber').value;
     const numberOfPersons = parseInt(document.getElementById('numberOfPersons').value);
@@ -49,13 +46,11 @@ function generateToken() {
     alert(`Your tokens have been generated: ${tokenNumbers.join(', ')}`);
 }
 
-// Display admin login form
 function showAdminLogin() {
     document.getElementById("userForm").style.display = "none";
     document.getElementById("adminLogin").style.display = "block";
 }
 
-// Admin login validation
 function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -69,7 +64,6 @@ function login() {
     }
 }
 
-// Display token report in dashboard
 function displayTokenReport() {
     const totalTokens = Object.values(phoneTokenCount).reduce((acc, val) => acc + val, 0);
     let reportHTML = `<p>Total Tokens Generated: ${totalTokens}</p><table border="1"><tr><th>Sl.no.</th><th>Mobile Number</th><th>Tokens Issued</th></tr>`;
@@ -83,7 +77,6 @@ function displayTokenReport() {
     document.getElementById("tokenReport").innerHTML = reportHTML;
 }
 
-// Generate PDF report
 function generatePDFReport() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -110,19 +103,4 @@ function generatePDFReport() {
     }
     
     doc.save(`Token_Report_${formattedDate.replace(/ /g, "_").replace(/:/g, "-")}.pdf`);
-}
-
-// Reset data function with password verification
-function resetData() {
-    const enteredPassword = prompt("Enter the reset password:");
-    if (enteredPassword === resetPassword) {
-        // Clear data and reset current token
-        phoneTokenCount = {};
-        currentToken = 1;
-        alert("Data has been reset successfully.");
-        // Refresh the token report display
-        displayTokenReport();
-    } else {
-        alert("Incorrect password. Data reset failed.");
-    }
 }
